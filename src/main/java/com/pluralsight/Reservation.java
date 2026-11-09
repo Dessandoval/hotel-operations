@@ -29,4 +29,23 @@ public class Reservation {
     public void setRoomType(String roomType) {
         this.roomType = roomType;
     }
+
+    public double getPrice(){
+
+        double price = 0;
+
+        if (roomType.equalsIgnoreCase("king")) {
+            price = 139.00;
+        } else if (roomType.equalsIgnoreCase("double")) {
+            price = 124.00;
+        }
+        if (weekend){
+            price *= 1.10;
+        }
+        return price;
+    }
+
+    public double getReservationTotal() {
+        return getPrice() * numberOfNights;
+    }
 }
