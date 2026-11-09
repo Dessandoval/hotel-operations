@@ -7,6 +7,12 @@ public class Room {
     private boolean isOccupied;
     private boolean isDirty;
 
+    public Room(int numberOfBeds, double price, boolean isOccupied, boolean isDirty) {
+        this.numberOfBeds = numberOfBeds;
+        this.price = price;
+        this.isOccupied = isOccupied;
+        this.isDirty = isDirty;
+    }
     public int getNumberOfBeds() {
         return numberOfBeds;
     }
@@ -21,5 +27,10 @@ public class Room {
 
     public boolean isDirty() {
         return isDirty;
+    }
+
+    public boolean isAvailable() {
+        return !isOccupied;
+        return !isDirty;
     }
 }
