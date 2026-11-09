@@ -53,12 +53,6 @@ public class Employee {
     }
 
     public double getTotalPay(){
-
-        double regularPay = getRegularHours() * payRate;
-
-        double overtimePay = getOvertimeHours() * payRate * 1.5;
-
-        return regularPay + overtimePay;
-
+        return (getRegularHours() * payRate) + (getOvertimeHours() * payRate * 1.5);
     }
 }
