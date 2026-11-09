@@ -12,9 +12,9 @@ public class App {
         Room room3 = new Room(2, 285.00, true, false);
         System.out.println("Occupied Room: " + room3.isAvailable());
 
-//        Reservation reservation = new Reservation("king", 3, true);
-//
-//        System.out.printf("Price per night: $%.2f%n", reservation.getPrice());
+        Reservation reservation = new Reservation("King", 3, true);
+        System.out.printf("Price per night: $%.2f%n", reservation.getPrice());
+
 
 
 
