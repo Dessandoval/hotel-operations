@@ -47,5 +47,12 @@ public class App {
 
         room1.cleanRoom();
         System.out.println("After cleaning: " + room1.isAvailable());
+
+        System.out.println("=== Punch In ====\n ");
+        Employee employee3 = new Employee("123965482", "Joe", "Sales", 20.00, 20.0);
+        employee3.punchIn(10);
+        employee3.punchOut(14); // should go up 4 hours
+
+        System.out.println("After Shift: " + employee3.getHoursWorked());
     }
 }
