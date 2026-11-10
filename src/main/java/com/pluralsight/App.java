@@ -4,8 +4,8 @@ public class App {
     public static void main(String[] args) {
 
         System.out.println("=== Room ===\n");
-        Room room1 = new Room(2, 124.00, false, false);
-        System.out.println("Clean room: " + room1.isAvailable());
+        Room room = new Room(2, 124.00, false, false);
+        System.out.println("Clean room: " + room.isAvailable());
 
         Room room2 = new Room(1, 125.00, false, true);
         System.out.println("Dirty room: " + room2.isDirty());
@@ -39,14 +39,17 @@ public class App {
         System.out.printf("Total Pay: $%.2f%n", employee2.getTotalPay());
 
         System.out.println("=== CHECK IN ===\n");
-        room1.checkIn();
-        System.out.println("After check in: " + room1.isAvailable());
+        Room cleanroom = new Room(2, 124.00, false, false);
+        System.out.println("Start (Clean & Empty): " + cleanroom.isAvailable());
 
-        room1.checkOut();
-        System.out.println("After check out: " + room1.isAvailable());
+        cleanroom.checkIn();
+        System.out.println("After check in: " + cleanroom.isAvailable());
 
-        room1.cleanRoom();
-        System.out.println("After cleaning: " + room1.isAvailable());
+        cleanroom.checkOut();
+        System.out.println("After check out: " + cleanroom.isAvailable());
+
+        cleanroom.cleanRoom();
+        System.out.println("After cleaning: " + cleanroom.isAvailable());
 
         System.out.println("=== Punch In ====\n ");
         Employee employee3 = new Employee("123965482", "Joe", "Sales", 20.00, 20.0);
