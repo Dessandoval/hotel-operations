@@ -57,5 +57,20 @@ public class App {
         employee3.punchOut(14); // should go up 4 hours
 
         System.out.println("After Shift: " + employee3.getHoursWorked());
+
+        System.out.println("=== Employee Punch Test ===\n");
+        Employee employee = new Employee("123982", "Alice", "Sales", 20.00, 20.0);
+        System.out.println("Hours before shift: " + employee.getHoursWorked());
+        employee.punchIn();
+        employee.punchOut();
+        System.out.println("Hours after punch: " + employee.getHoursWorked()); // Expected: 20.0
+
+        System.out.println("\n=== Hotel Reservation Test ===");
+        // Create hotel using the short constructor (2 suites, 10 basic rooms)
+        Hotel hotel = new Hotel(2, 10, "Lakeside Inn");
+
+        System.out.println("Booking 2 suites: " + hotel.bookRoom(2, true));
+        System.out.println("Booking 1 more suite: " + hotel.bookRoom(1, true));
+        System.out.println("Available Suites: " + hotel.getAvailableSuites());
     }
 }
