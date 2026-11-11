@@ -59,7 +59,7 @@ public class App {
         System.out.println("After Shift: " + employee3.getHoursWorked());
 
         System.out.println("=== Employee Punch Test ===\n");
-        Employee employee = new Employee("123982", "Alice", "Sales", 20.00, 20.0);
+        Employee employee = new Employee("123982", "Alice", "Sales", 20.00, 20);
         System.out.println("Hours before shift: " + employee.getHoursWorked());
         employee.punchIn();
         employee.punchOut();
