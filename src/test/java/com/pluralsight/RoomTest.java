@@ -34,4 +34,25 @@ class RoomTest {
         assertEquals(false, room3.isDirty());
         assertEquals(true, room3.isOccupied());
     }
+    // checkIn() on a dirty room does nothing (it stays not occupied)
+    @Test
+    public void checkIn_should_onDirtyRoomDoesNothing(){
+        Room room = new Room(1, 200, true, true);
+        boolean actualResult = room.checkIn();
+        assertEquals(false, actualResult);
+    }
+    //checkIn() on an occupied room does nothing. check it stays not dirty.
+    @Test
+    public void checkIn_should_onOccupiedRoomDoesNothingNotDirty(){
+        Room room = new Room(2, 124.00, true, false);
+        boolean actualResult = room.checkIn();
+        assertEquals(false, actualResult);
+    }
+    //cleanRoom() on an occupied room does nothing (it stays dirty
+    @Test
+    public void cleanRoom_should_onOccupiedRoomDoesNothing(){
+        Room room = new Room(2, 200, true, false);
+        boolean actualCleanRoom = room.cleanRoom();
+        assertEquals(false, actualCleanRoom);
+    }
 }
